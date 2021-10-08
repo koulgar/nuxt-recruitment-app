@@ -1,0 +1,49 @@
+{
+  "name": "puzzle-ui",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "prepare": "husky install",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "test:unit": "jest"
+  },
+  "lint-staged": {
+    "*.{js,vue}": "eslint"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.13.6",
+    "core-js": "^3.15.1",
+    "nuxt": "^2.15.7",
+    "svg-inline-loader": "^0.8.2"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.14.7",
+    "@nuxtjs/eslint-config": "^6.0.1",
+    "@nuxtjs/eslint-module": "^3.0.2",
+    "@nuxtjs/style-resources": "^1.2.1",
+    "@vue/test-utils": "^1.2.1",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^27.0.5",
+    "body-parser": "^1.19.0",
+    "destyle.css": "^3.0.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-nuxt": "^2.0.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^7.19.1",
+    "express": "^4.17.1",
+    "fibers": "^5.0.0",
+    "husky": "^6.0.0",
+    "jest": "^27.0.5",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.4.1",
+    "sass": "^1.42.1",
+    "sass-loader": "10",
+    "vue-jest": "^3.0.4"
+  }
+}

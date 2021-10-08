@@ -1,0 +1,26 @@
+const SUCCESSFUL = {
+  OK: 200,
+  CREATED: 201,
+};
+
+const REDIRECTION = {
+  MOVED_PERMANANTLY: 301,
+  MOVED_TEMPORARILY: 302,
+};
+
+const CLIENT_ERROR = {
+  BAD_REQUEST: 400,
+  NOT_FOUND: 404,
+  REQUEST_TIMEOUT: 408,
+};
+
+const SERVER_ERROR = {
+  SERVER_ERROR: 500,
+};
+
+export default {
+  ...SUCCESSFUL,
+  ...REDIRECTION,
+  ...CLIENT_ERROR,
+  ...SERVER_ERROR,
+};
