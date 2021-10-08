@@ -1,13 +1,23 @@
 <template>
-  <div>test</div>
+  <div>{{ jobList }}</div>
 </template>
 
 <script>
+import {
+  jobListingNamespace,
+  FETCH_JOB_LIST,
+  GET_JOB_LIST,
+} from '@/constants/job-listing-store.constant';
+import { mapGetters } from 'vuex';
 export default {
   layout: 'main',
-  async asyncData({ $axios }) {
-    const response = await $axios.get('/api/test/123');
-    console.log(response.data);
+  async asyncData({ store }) {
+    await store.dispatch(jobListingNamespace(FETCH_JOB_LIST));
+  },
+  computed: {
+    ...mapGetters({
+      jobList: jobListingNamespace(GET_JOB_LIST),
+    }),
   },
 };
 </script>

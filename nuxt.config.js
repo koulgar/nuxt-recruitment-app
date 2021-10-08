@@ -15,7 +15,7 @@ export default {
   serverMiddleware: [{ path: '/api', handler: '@/api' }],
   css: ['destyle.css', '@/assets/css/roboto.css'],
   styleResources: { scss: ['@/assets/scss/main.scss'] },
-  plugins: [],
+  plugins: ['@/plugins/serviceContainer/index.js'],
   components: true,
   buildModules: ['@nuxtjs/eslint-module'],
   modules: ['@nuxtjs/axios', '@nuxtjs/style-resources'],
