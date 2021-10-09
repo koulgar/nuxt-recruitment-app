@@ -1,5 +1,11 @@
-import { JOB_LIST } from '../../constants/job-listing-store.constant';
+import {
+  JOB_LIST,
+  JOB_LIST_PAGE,
+  JOB_LIST_PAGES,
+} from '../../constants/job-listing-store.constant';
 
 export default () => ({
   [JOB_LIST]: {},
+  [JOB_LIST_PAGE]: 1,
+  [JOB_LIST_PAGES]: 0,
 });

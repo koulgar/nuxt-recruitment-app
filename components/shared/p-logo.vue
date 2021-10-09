@@ -1,7 +1,7 @@
 <template>
   <section class="p-logo">
-    <p-svg file="puzzle" :class="{ 'p-svg--light': light }" />
-    <span class="p-logo__brand" :class="{ 'p-logo__brand--light': light }">
+    <p-svg file="puzzle" :class="{ 'p-svg--dark': dark }" />
+    <span class="p-logo__brand" :class="{ 'p-logo__brand--dark': dark }">
       Puzzle
     </span>
   </section>
@@ -14,7 +14,7 @@ export default {
     pSvg,
   },
   props: {
-    light: {
+    dark: {
       type: Boolean,
       default: false,
     },
@@ -25,21 +25,21 @@ export default {
 .p-logo {
   display: flex;
   align-items: center;
-  justify-content: center;
+  user-select: none;
   &__brand {
     font-size: 32px;
     font-weight: bold;
-    color: $brand-purple;
-    &--light {
-      color: #ffffff;
+    color: #ffffff;
+    &--dark {
+      color: $brand-purple;
     }
   }
 }
 .p-svg {
-  fill: $brand-purple;
+  fill: #ffffff;
   margin-right: 20px;
-  &--light {
-    fill: #ffffff;
+  &--dark {
+    fill: $brand-purple;
   }
   &--puzzle {
     width: 50px;

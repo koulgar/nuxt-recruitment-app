@@ -42,7 +42,7 @@ export default {
     background-color: $brand-purple--light;
   }
   &[disabled] {
-    background-color: $gray--disabled;
+    background-color: $gray;
     opacity: 0.5;
     cursor: not-allowed;
   }

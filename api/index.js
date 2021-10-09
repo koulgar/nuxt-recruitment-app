@@ -24,6 +24,7 @@ app.get('/joblist', (request, response) => {
   const items = getItemsByPageAndPageSize(page);
   const total = jobList.length;
   const pages = getTotalPageCount(total);
+  items.sort((a, b) => a.durationDay - b.durationDay);
   response.json({ items, total, pages, page });
   response.status(200);
 });

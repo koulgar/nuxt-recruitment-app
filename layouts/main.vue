@@ -7,7 +7,7 @@
   </div>
 </template>
 <script>
-import pHeader from '../components/shared/p-header.vue';
+import pHeader from '../components/shared/p-header';
 export default {
   components: {
     pHeader,
@@ -25,11 +25,13 @@ export default {
   background: #ffffff;
   &__header {
     width: 100%;
-    background: $brand-purple;
   }
   &__content {
     display: flex;
+    width: 100%;
     max-width: 1200px;
+    margin-top: 40px;
+    padding: 0 20px;
   }
 }
 </style>

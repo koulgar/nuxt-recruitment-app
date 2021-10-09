@@ -1,5 +1,12 @@
 [
   {
+    "name": "job-listing",
+    "path": "/job-listing",
+    "component": "/Users/ddurmuslar/nuxtProject/nuxt-recruitment-app/pages/job-listing/index.vue",
+    "chunkName": "pages/job-listing/index",
+    "_name": "_63e4bd34"
+  },
+  {
     "name": "index",
     "path": "/",
     "component": "/Users/ddurmuslar/nuxtProject/nuxt-recruitment-app/pages/index.vue",
