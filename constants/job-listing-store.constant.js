@@ -5,6 +5,6 @@ export const GET_JOB_LIST = 'GET_JOB_LIST';
 export const SET_JOB_LIST = 'SET_JOB_LIST';
 export const JOB_LIST = 'JOB_LIST';
 
-export const jobListingNamespace = constant => {
+export const jobListingModuleNamespace = constant => {
   return MODULE_NAMESPACE + '/' + constant;
 };

@@ -17,7 +17,7 @@ export default {
   styleResources: { scss: ['@/assets/scss/main.scss'] },
   plugins: ['@/plugins/serviceContainer/index.js'],
   components: true,
-  buildModules: ['@nuxtjs/eslint-module'],
+  buildModules: ['@nuxtjs/eslint-module', '@nuxtjs/svg'],
   modules: ['@nuxtjs/axios', '@nuxtjs/style-resources'],
   build: {},
 };

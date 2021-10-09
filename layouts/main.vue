@@ -1,16 +1,16 @@
 <template>
   <div class="default-layout">
+    <p-header class="default-layout__header" />
     <div class="default-layout__content">
-      <p-logo />
       <nuxt />
     </div>
   </div>
 </template>
 <script>
-import pLogo from '../components/shared/p-logo.vue';
+import pHeader from '../components/shared/p-header.vue';
 export default {
   components: {
-    pLogo,
+    pHeader,
   },
 };
 </script>
@@ -18,11 +18,17 @@ export default {
 <style lang="scss" scoped>
 .default-layout {
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
   height: 100vh;
   background: #ffffff;
+  &__header {
+    width: 100%;
+    background: $brand-purple;
+  }
   &__content {
+    display: flex;
     max-width: 1200px;
   }
 }

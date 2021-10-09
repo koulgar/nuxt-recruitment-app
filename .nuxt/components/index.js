@@ -1,4 +1,5 @@
 export { default as SharedPButton } from '../../components/shared/p-button.vue'
+export { default as SharedPHeader } from '../../components/shared/p-header.vue'
 export { default as SharedPLogo } from '../../components/shared/p-logo.vue'
 export { default as SharedPSvg } from '../../components/shared/p-svg.vue'
 

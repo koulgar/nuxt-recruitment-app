@@ -2,6 +2,9 @@
   "SharedPButton": {
     "description": "Auto imported from components/shared/p-button.vue"
   },
+  "SharedPHeader": {
+    "description": "Auto imported from components/shared/p-header.vue"
+  },
   "SharedPLogo": {
     "description": "Auto imported from components/shared/p-logo.vue"
   },

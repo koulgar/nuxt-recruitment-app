@@ -1,10 +1,10 @@
 <!-- eslint-disable vue/no-v-html -->
 <template>
-  <span
+  <component
+    :is="source"
     class="p-svg"
     :class="'p-svg--' + file"
     v-on="$listeners"
-    v-html="source"
   />
 </template>
 <script>
@@ -17,7 +17,7 @@ export default {
   },
   computed: {
     source() {
-      return require(`!!svg-inline-loader!~/assets/svg/${this.file}.svg`);
+      return require(`@/assets/svg/${this.file}.svg?inline`);
     },
   },
 };
