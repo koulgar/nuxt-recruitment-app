@@ -1,0 +1,15 @@
+@mixin slideFadeInTransitionMixin($transitionName, $ms, $axis, $dist) {
+  #{$transitionName} {
+    &-enter-active {
+      transition: all $ms ease;
+    }
+    &-leave-active {
+      transition: all $ms ease;
+    }
+    &-enter,
+    &-leave-to {
+      transform: translate#{$axis }($dist);
+      opacity: 0;
+    }
+  }
+}

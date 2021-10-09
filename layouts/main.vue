@@ -8,13 +8,13 @@
 </template>
 <script>
 import pHeader from '../components/shared/p-header';
+
 export default {
   components: {
     pHeader,
   },
 };
 </script>
-
 <style lang="scss" scoped>
 .default-layout {
   display: flex;

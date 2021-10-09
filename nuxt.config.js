@@ -12,12 +12,19 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
+  pageTransition: {
+    name: 'p-page-transition',
+    mode: 'out-in',
+    appear: true,
+  },
   serverMiddleware: [{ path: '/api', handler: '@/api' }],
-  css: ['destyle.css', '@/assets/css/roboto.css'],
-  styleResources: { scss: ['@/assets/scss/main.scss'] },
+  css: ['destyle.css', '@/assets/scss/base/index.scss'],
   plugins: ['@/plugins/serviceContainer/index.js'],
-  components: true,
+  components: false,
   buildModules: ['@nuxtjs/eslint-module', '@nuxtjs/svg'],
   modules: ['@nuxtjs/axios', '@nuxtjs/style-resources'],
+  styleResources: {
+    scss: ['@/assets/scss/abstracts/index.scss'],
+  },
   build: {},
 };
