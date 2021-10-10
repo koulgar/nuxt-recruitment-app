@@ -35,7 +35,6 @@ export default {
   border-radius: 4px;
   color: #ffffff;
   transition: all 0.15s linear;
-  cursor: pointer;
   &:hover,
   &:focus,
   &:active {

@@ -1,5 +1,9 @@
-import jobService from './job.service';
+import { createJobService } from './job.service';
 
-export default ($http, store, context) => ({
-  jobService: jobService($http, store, context),
-});
+export default (context, inject) => {
+  const jobService = createJobService(context);
+  const $services = {
+    jobService,
+  };
+  inject('services', $services);
+};

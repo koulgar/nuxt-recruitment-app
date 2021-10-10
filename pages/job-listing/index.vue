@@ -26,6 +26,18 @@ export default {
   async asyncData({ store }) {
     await store.dispatch(jobListingModuleNamespace(FETCH_JOB_LIST));
   },
+  head() {
+    return {
+      title: 'Puzzle | Listeleme',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: "İş arıyorsan eksik parça Puzzle'da! | Listeleme",
+        },
+      ],
+    };
+  },
   computed: {
     ...mapGetters({
       jobList: jobListingModuleNamespace(GET_JOB_LIST),

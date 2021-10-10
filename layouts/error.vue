@@ -32,15 +32,18 @@ export default {
       required: true,
     },
   },
-  computed: {
-    errorMessage() {
-      const { statusCode } = this.error;
-      return parseLayoutErrorMessage(statusCode);
-    },
+  data() {
+    return {
+      errorMessage: null,
+    };
+  },
+  created() {
+    const { statusCode } = this.error;
+    this.errorMessage = parseLayoutErrorMessage(statusCode);
   },
   methods: {
     clickHandler() {
-      this.$router.push({ name: 'index' });
+      this.$router.replace({ name: 'index' });
     },
   },
 };

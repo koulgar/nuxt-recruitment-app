@@ -22,7 +22,7 @@
         <section class="listing-card-content__location">
           <p-svg file="location" />
           <span class="listing-card-content__text">
-            {{ location }}
+            {{ jobItem.cityName }}, {{ jobItem.townName }}
           </span>
         </section>
         <section class="listing-card-content__location">
@@ -57,9 +57,6 @@ export default {
     },
   },
   computed: {
-    location() {
-      return [this.jobItem.cityName, this.jobItem.townName].join(' | ');
-    },
     hasLocationInfo() {
       return this.jobItem.latitude && this.jobItem.longitude;
     },
@@ -102,8 +99,9 @@ export default {
 }
 
 .p-svg {
+  margin-right: 5px;
   width: 18px;
   height: 18px;
-  fill: #434343;
+  fill: $brand-purple;
 }
 </style>

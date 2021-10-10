@@ -19,7 +19,7 @@ export default {
   },
   serverMiddleware: [{ path: '/api', handler: '@/api' }],
   css: ['destyle.css', '@/assets/scss/base/index.scss'],
-  plugins: ['@/plugins/serviceContainer/index.js'],
+  plugins: ['@/plugins/httpClient', '@/services'],
   components: false,
   buildModules: ['@nuxtjs/eslint-module', '@nuxtjs/svg'],
   modules: ['@nuxtjs/axios', '@nuxtjs/style-resources'],

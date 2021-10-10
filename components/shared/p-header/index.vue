@@ -1,15 +1,18 @@
 <template>
   <div class="p-header">
     <div class="p-header__content">
-      <p-logo class="p-header__logo" dark />
-      <template v-for="(menuItem, index) in menuItemList">
+      <nuxt-link class="p-header__logo" to="/">
+        <p-logo dark />
+      </nuxt-link>
+      <section class="p-header__menu-item-list">
         <header-menu-item
+          v-for="(menuItem, index) in menuItemList"
           :key="index"
           :to="menuItem.to"
           :title="menuItem.title"
           :icon="menuItem.icon"
         />
-      </template>
+      </section>
     </div>
   </div>
 </template>
@@ -26,12 +29,7 @@ export default {
     return {
       menuItemList: [
         {
-          title: 'Anasayfa',
-          to: '/',
-          icon: 'home',
-        },
-        {
-          title: 'Listeleme',
+          title: 'İş Ara',
           to: '/job-listing',
           icon: 'listing',
         },
@@ -56,7 +54,11 @@ export default {
   }
   &__logo {
     align-self: flex-start;
-    flex: auto;
+    margin-right: 30px;
+  }
+  &__menu-item-list {
+    display: flex;
+    align-items: cemter;
   }
 }
 </style>
