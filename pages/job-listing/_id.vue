@@ -10,6 +10,7 @@
     </div>
     <p-line-behind-title class="detail__seperator" />
     <span>{{ detail.description }} </span>
+    <p-map v-if="hasLocation" class="detail__map" :center="location" />
   </div>
 </template>
 
@@ -22,8 +23,10 @@ import {
 import { mapGetters } from 'vuex';
 import pLineBehindTitle from '@/components/shared/p-line-behind-title.vue';
 import detailInfoContent from '@/components/detail-info-content';
+import pMap from '@/components/p-map';
 export default {
   components: {
+    pMap,
     detailInfoContent,
     pLineBehindTitle,
   },
@@ -52,12 +55,27 @@ export default {
           content: "İş arıyorsan eksik parça Puzzle'da! | Detay",
         },
       ],
+      script: [this.ymapsLocationScript],
     };
   },
   computed: {
     ...mapGetters({
       detail: jobListingModuleNamespace(GET_JOB_LIST_DETAIL),
     }),
+    hasLocation() {
+      return this.detail.hasLatitude && this.detail.hasLongitude;
+    },
+    location() {
+      return [this.detail.latitude, this.detail.longitude];
+    },
+    ymapsLocationScript() {
+      if (!this.hasLocation) return;
+      return {
+        hid: 'data-ymaps-sdk',
+        rel: 'preload',
+        src: process.env.YANDEX_MAPS_SDK_URL,
+      };
+    },
   },
 };
 </script>
@@ -68,7 +86,6 @@ export default {
   flex-direction: column;
   align-self: center;
   width: 100%;
-  max-width: 800px;
   padding: 20px;
   border: 1px solid $gray--placeholder;
   border-radius: 4px;
@@ -84,6 +101,11 @@ export default {
   }
   &__seperator {
     margin-bottom: 20px;
+  }
+  &__map {
+    margin-top: 20px;
+    height: 400px;
+    border: 1px solid $gray--placeholder;
   }
 }
 </style>

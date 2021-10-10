@@ -1,4 +1,8 @@
 export default {
+  env: {
+    YANDEX_MAPS_SDK_URL:
+      'https://api-maps.yandex.ru/2.1/?apikey=pdct.1.1.20211010T003416Z.0316ab24d72a0c1e.7f653716b03b6b80319b19e476a3fccfb1e320d4&lang=tr_TR',
+  },
   head: {
     title: 'recruitmentApp',
     htmlAttrs: {
@@ -26,5 +30,12 @@ export default {
   styleResources: {
     scss: ['@/assets/scss/abstracts/index.scss'],
   },
-  build: {},
+  build: {
+    babel: {
+      plugins: [
+        '@babel/plugin-proposal-optional-chaining',
+        '@babel/plugin-proposal-nullish-coalescing-operator',
+      ],
+    },
+  },
 };
