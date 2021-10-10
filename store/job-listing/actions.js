@@ -7,11 +7,11 @@ import {
 
 export default {
   async [FETCH_JOB_LIST]({ commit }, page) {
-    const { data } = await this.$services.jobService.fetchJobList(page);
-    commit(SET_JOB_LIST, data);
+    const jobList = await this.$services.jobService.findAll(page);
+    commit(SET_JOB_LIST, jobList);
   },
   async [FETCH_JOB_LIST_DETAIL]({ commit }, jobId) {
-    const { data } = await this.$services.jobService.fetchJobListDetail(jobId);
-    commit(SET_JOB_LIST_DETAIL, data);
+    const job = await this.$services.jobService.find(jobId);
+    commit(SET_JOB_LIST_DETAIL, job);
   },
 };
