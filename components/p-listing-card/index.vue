@@ -1,6 +1,10 @@
 <template>
   <p-card class="listing-card">
-    <img class="listing-card__logo" :src="jobItem.imageUrl" />
+    <p-lazy-image
+      class="listing-card__logo"
+      :src="jobItem.imageUrl"
+      :alt="jobItem.companyName"
+    />
     <listing-card-content :job-item="jobItem" />
   </p-card>
 </template>
@@ -8,9 +12,11 @@
 <script>
 import pCard from '@/components/shared/p-card.vue';
 import listingCardContent from './listing-card-content.vue';
+import pLazyImage from '../shared/p-lazy-image.vue';
 export default {
   components: {
     pCard,
+    pLazyImage,
     listingCardContent,
   },
   props: {
@@ -31,6 +37,9 @@ export default {
     box-shadow: 0 1px 5px 0 rgb(0 0 0 / 40%);
   }
   &__logo {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
     border: 1px solid $gray--placeholder;
     border-radius: 4px;
     margin-right: 10px;

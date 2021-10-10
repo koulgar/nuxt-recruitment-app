@@ -1,7 +1,7 @@
 <template>
   <div class="detail">
     <div class="detail__content">
-      <img
+      <pLazyImage
         class="detail__firm-logo"
         :src="detail.imageUrl"
         :alt="detail.companyName"
@@ -24,9 +24,12 @@ import { mapGetters } from 'vuex';
 import pLineBehindTitle from '@/components/shared/p-line-behind-title.vue';
 import detailInfoContent from '@/components/detail-info-content';
 import pMap from '@/components/p-map';
+import pLazyImage from '../../components/shared/p-lazy-image.vue';
+
 export default {
   components: {
     pMap,
+    pLazyImage,
     detailInfoContent,
     pLineBehindTitle,
   },
@@ -55,7 +58,6 @@ export default {
           content: "İş arıyorsan eksik parça Puzzle'da! | Detay",
         },
       ],
-      script: [this.ymapsLocationScript],
     };
   },
   computed: {
@@ -67,14 +69,6 @@ export default {
     },
     location() {
       return [this.detail.latitude, this.detail.longitude];
-    },
-    ymapsLocationScript() {
-      if (!this.hasLocation) return;
-      return {
-        hid: 'data-ymaps-sdk',
-        rel: 'preload',
-        src: process.env.YANDEX_MAPS_SDK_URL,
-      };
     },
   },
 };

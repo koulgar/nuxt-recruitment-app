@@ -6,8 +6,8 @@ import {
 } from '../../constants/job-listing-store.constant';
 
 export default {
-  async [FETCH_JOB_LIST]({ commit }) {
-    const { data } = await this.$services.jobService.fetchJobList();
+  async [FETCH_JOB_LIST]({ commit }, page) {
+    const { data } = await this.$services.jobService.fetchJobList(page);
     commit(SET_JOB_LIST, data);
   },
   async [FETCH_JOB_LIST_DETAIL]({ commit }, jobId) {

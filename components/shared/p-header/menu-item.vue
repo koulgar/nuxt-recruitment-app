@@ -38,6 +38,7 @@ export default {
   color: $brand-purple;
   padding: 0 10px;
   transition: all 0.15s ease-in-out;
+  background-color: #ffffff;
   &:not(:first-child) {
     margin-left: 10px;
   }

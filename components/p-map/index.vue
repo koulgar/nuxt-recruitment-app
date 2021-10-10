@@ -25,6 +25,17 @@ export default {
       mapInstance: null,
     };
   },
+  head() {
+    return {
+      script: [
+        {
+          hid: 'data-ymaps-sdk',
+          rel: 'preload',
+          src: process.env.YANDEX_MAPS_SDK_URL,
+        },
+      ],
+    };
+  },
   mounted() {
     this.initializeYandexMaps();
   },

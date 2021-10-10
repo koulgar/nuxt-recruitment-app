@@ -6,14 +6,16 @@ const DEFAULT_PAGE_SIZE = 16;
 const router = express.Router();
 
 const getCurrentPage = request => {
-  return request.query?.page || 1;
+  if (request && request.query && request.query.page) return request.query.page;
+  return 1;
 };
 
 const getTotalPageCount = total => {
-  return Math.ceil((total + DEFAULT_PAGE_SIZE - 1) / DEFAULT_PAGE_SIZE);
+  return Math.ceil(total / DEFAULT_PAGE_SIZE);
 };
 
 const getItemsByPageAndPageSize = page => {
+  jobList.sort((a, b) => a.durationDay - b.durationDay);
   return jobList.slice(
     (page - 1) * DEFAULT_PAGE_SIZE,
     page * DEFAULT_PAGE_SIZE
@@ -25,7 +27,6 @@ router.get('/', (request, response) => {
   const items = getItemsByPageAndPageSize(page);
   const total = jobList.length;
   const pages = getTotalPageCount(total);
-  items.sort((a, b) => a.durationDay - b.durationDay);
   response.status(200).json({ items, total, pages, page });
 });
 

@@ -2,6 +2,7 @@
 <template>
   <component
     :is="source"
+    v-if="file"
     class="p-svg"
     :class="'p-svg--' + file"
     v-on="$listeners"
