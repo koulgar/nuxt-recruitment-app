@@ -1,6 +1,7 @@
 <template>
   <section class="p-input">
     <input
+      data-test-input
       :value="value"
       :placeholder="placeholder"
       class="p-input__input"
@@ -66,7 +67,7 @@ export default {
     },
     blurHandler() {
       this.isFocused = false;
-      if (this.trim) this.updateValue(this.value.trim());
+      if (this.trim) return this.updateValue(this.value.trim());
       this.updateValue(this.value);
     },
     focusHandler() {

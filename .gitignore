@@ -3,6 +3,7 @@ node_modules
 
 # logs
 npm-debug.log
+yarn-error.log
 
 # Nuxt build
 .nuxt
@@ -11,3 +12,5 @@ npm-debug.log
 dist
 
 .eslintcache
+
+coverage
