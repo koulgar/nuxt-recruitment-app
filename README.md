@@ -14,6 +14,10 @@ yarn dev
 ```
 yarn build
 ```
+### Starts production build
+```
+yarn start
+```
 
 ### Run your unit tests
 ```
