@@ -1,4 +1,4 @@
-import { createJobApiGwClient } from './job-api-gw-client';
+import { createJobApiGwClient } from './job-api-client';
 
 export default (context, inject) => {
   const jobApiGwClient = createJobApiGwClient(context);

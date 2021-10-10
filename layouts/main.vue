@@ -22,6 +22,8 @@ export default {
   flex-direction: column;
   height: 100vh;
   background: #ffffff;
+  margin-bottom: 30px;
+
   &__header {
     width: 100%;
   }

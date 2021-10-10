@@ -20,7 +20,8 @@
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/svg": "^0.3.0",
     "core-js": "^3.15.1",
-    "nuxt": "^2.15.7"
+    "nuxt": "^2.15.7",
+    "ymaps": "^0.2.1"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.14.7",

@@ -1,11 +1,12 @@
 <template>
-  <div style="position: relative">
+  <div class="p-map">
     <div id="mapId" ref="yandexMap" />
     <p-overlay :visible="!isReady" :loading="!isReady" />
   </div>
 </template>
 
 <script>
+import ymaps from 'ymaps';
 import pOverlay from '@/components/shared/p-overlay.vue';
 export default {
   components: {
@@ -25,17 +26,6 @@ export default {
       mapInstance: null,
     };
   },
-  head() {
-    return {
-      script: [
-        {
-          hid: 'data-ymaps-sdk',
-          rel: 'preload',
-          src: process.env.YANDEX_MAPS_SDK_URL,
-        },
-      ],
-    };
-  },
   mounted() {
     this.initializeYandexMaps();
   },
@@ -43,7 +33,7 @@ export default {
     async initializeYandexMaps() {
       try {
         this.isReady = false;
-        this.yandexMapsSdk = await window.ymaps.load();
+        this.yandexMapsSdk = await ymaps.load();
         this.mapInstance = new this.yandexMapsSdk.Map('mapId', {
           center: this.center,
           controls: [],
@@ -59,3 +49,12 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.p-map {
+  position: relative;
+}
+#mapId {
+  height: 400px;
+}
+</style>

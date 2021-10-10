@@ -86,7 +86,6 @@ export default {
 <style lang="scss" scoped>
 .job-listing {
   width: 100%;
-  margin-bottom: 30px;
 
   &__card {
     margin-bottom: 10px;
