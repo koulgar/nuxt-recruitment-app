@@ -8,6 +8,8 @@
 </template>
 
 <script>
+import placeholderImage from '@/assets/svg/placeholder.svg';
+import errorImage from '@/assets/img/placeholder-image.jpeg';
 export default {
   props: {
     src: {
@@ -17,11 +19,11 @@ export default {
     },
     placeholderImage: {
       type: String,
-      default: '/image/loading.svg',
+      default: placeholderImage,
     },
     errorImage: {
       type: String,
-      default: '/image/placeholder-image.jpeg',
+      default: errorImage,
     },
     preload: {
       type: Boolean,

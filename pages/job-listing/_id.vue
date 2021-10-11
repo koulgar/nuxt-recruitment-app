@@ -1,7 +1,7 @@
 <template>
   <div class="detail">
     <div class="detail__content">
-      <pLazyImage
+      <p-lazy-image
         class="detail__firm-logo"
         :src="detail.imageUrl"
         :alt="detail.companyName"
@@ -89,9 +89,12 @@ export default {
     margin-bottom: 20px;
   }
   &__firm-logo {
+    width: 150px;
+    height: 150px;
     border: 1px solid $gray;
     border-radius: 4px;
     margin-right: 20px;
+    object-fit: cover;
   }
   &__seperator {
     margin-bottom: 20px;
